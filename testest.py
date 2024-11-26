@@ -110,6 +110,8 @@ if uploaded_file:
                     title=f"Variação do {parametro_escolhido} ao longo dos anos",
                     labels={coluna_ano: "Ano", parametro_escolhido: parametro_escolhido},
                     color=coluna_ano,
+                    # Remover a legenda
+                    showlegend=False
                 )
                 st.plotly_chart(fig_barras, use_container_width=True)
 
@@ -153,4 +155,5 @@ if uploaded_file:
         st.error(f"Erro ao carregar o arquivo: {e}")
 else:
     st.info("Por favor, faça upload de um arquivo Excel com os dados de qualidade da água.")
+
 
